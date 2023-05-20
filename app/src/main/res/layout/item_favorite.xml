@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="favfilm"
+            type="com.example.m.room.FavoriteMovie" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/white"
+        card_view:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imgFilm"
+                android:layout_marginRight="10dp"
+                android:src="@{favfilm.posterPath}"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:id="@+id/tvJudulfilm"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@{favfilm.title}"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@id/imgFilm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvTglFilm"
+                android:text="@{favfilm.releasedate}"
+                android:textColor="@color/teal_700"
+                android:layout_toRightOf="@+id/imgFilm"
+                android:layout_below="@+id/tvJudulfilm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
